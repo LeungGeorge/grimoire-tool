@@ -5,12 +5,12 @@ import (
 	"os"
 	"sort"
 
-	"github.com/LeungGeorge/grit/after"
-	"github.com/LeungGeorge/grit/before"
-	"github.com/LeungGeorge/grit/command/git"
-	"github.com/LeungGeorge/grit/command/hexo"
-	"github.com/LeungGeorge/grit/command/space"
-	"github.com/LeungGeorge/grit/flag"
+	"github.com/LeungGeorge/grimoire-tool/after"
+	"github.com/LeungGeorge/grimoire-tool/before"
+	"github.com/LeungGeorge/grimoire-tool/command/git"
+	"github.com/LeungGeorge/grimoire-tool/command/hexo"
+	"github.com/LeungGeorge/grimoire-tool/command/space"
+	"github.com/LeungGeorge/grimoire-tool/flag"
 	"github.com/urfave/cli"
 )
 
@@ -45,8 +45,8 @@ func main() {
 	// 如果想在帮助信息里面实现分组展示，可通过设置 Category 实现。
 	// 另外，command 可能还有 subcommand 命令，这就需要添加两个命令才能完成相应的操作。
 	// 举个栗子：
-	// grit git sync
-	// 可使用 grit git -h 查看帮助信息
+	// grimoire-tool git sync
+	// 可使用 grimoire-tool git -h 查看帮助信息
 
 	app.Commands = []cli.Command{
 		git.Git,

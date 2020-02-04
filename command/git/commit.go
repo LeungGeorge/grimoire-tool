@@ -4,7 +4,7 @@ import (
 	"log"
 	"os/exec"
 
-	"github.com/LeungGeorge/grit/flag"
+	"github.com/LeungGeorge/grimoire-tool/flag"
 )
 
 func commit() error {

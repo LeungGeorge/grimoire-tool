@@ -8,7 +8,7 @@ import (
 	"path/filepath"
 	"sort"
 
-	"github.com/LeungGeorge/grit/lib/gtools"
+	"github.com/LeungGeorge/grimoire-tool/lib/gtools"
 	"github.com/urfave/cli"
 )
 

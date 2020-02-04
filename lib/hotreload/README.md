@@ -74,7 +74,7 @@ import (
 	"io/ioutil"
 	"log"
 
-	"github.com/LeungGeorge/grit/lib/hotreload"
+	"github.com/LeungGeorge/grimoire-tool/lib/hotreload"
 	"github.com/gin-gonic/gin"
 	"github.com/json-iterator/go"
 )

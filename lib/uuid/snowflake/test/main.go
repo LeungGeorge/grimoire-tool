@@ -1,7 +1,10 @@
 package main
 
-import "fmt"
-import "github.com/LeungGeorge/grit/lib/uuid/snowflake"
+import (
+	"fmt"
+
+	"github.com/LeungGeorge/grimoire-tool/lib/uuid/snowflake"
+)
 
 func main() {
 	g, err := snowflake.NewGUID(1)
