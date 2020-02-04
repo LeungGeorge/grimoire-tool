@@ -1,0 +1,25 @@
+{
+  "name": "grimoire-tool",
+  "version": "1.0.4",
+  "description": "魔法书的工具包 grimoire-tool",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/LeungGeorge/grimoire-tool.git"
+  },
+  "keywords": [
+    "魔法书的工具包"
+  ],
+  "author": "liangyuanzheng",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/LeungGeorge/grimoire-tool/issues"
+  },
+  "bin": {
+    "grimoire-tool" : "./bin/grimoire-tool"
+  },
+  "homepage": "https://github.com/LeungGeorge/grimoire-tool"
+}
