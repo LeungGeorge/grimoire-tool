@@ -84,6 +84,12 @@ grimoire-tool --m "auto commit " git sync
 
 ## Install
 
+方式一，通过npm安装：  
+```
+npm install grimoire-tool -g
+```
+
+方式二，通过 go 安装：   
 To install, use `go get`:
 
 ```shell
