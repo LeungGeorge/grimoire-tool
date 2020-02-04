@@ -1,6 +1,6 @@
 {
   "name": "grimoire-tool",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "魔法书的工具包 grimoire-tool",
   "main": "index.js",
   "scripts": {
