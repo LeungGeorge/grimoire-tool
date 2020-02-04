@@ -1,6 +1,6 @@
 {
   "name": "grimoire-tool",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "魔法书的工具包 grimoire-tool",
   "main": "index.js",
   "scripts": {
@@ -19,7 +19,7 @@
     "url": "https://github.com/LeungGeorge/grimoire-tool/issues"
   },
   "bin": {
-    "grimoire-tool" : "./bin/grimoire-tool"
+    "grimoire-tool": "./bin/grimoire-tool"
   },
   "homepage": "https://github.com/LeungGeorge/grimoire-tool"
 }
