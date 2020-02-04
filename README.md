@@ -1,4 +1,4 @@
-# grit
+# grimoire-tool
 
 为简洁而生，基于 [urfave/cli](https://github.com/urfave/cli) 实现。
 
@@ -9,16 +9,15 @@
 - `github` 代码库同步（sync）一键同步 github 仓库。
 - `hexo` 博客预览（preview）、发布（publish）
 - `space` 目录空间查看工具
-- `grit` 自身升级工具
 
 ## Usage
 
 ```html
 NAME:
-   grit - grit is a tool of grimoire, batch execute commands.
+   grimoire-tool - grimoire-tool is a tool of grimoire, batch execute commands.
 
 USAGE:
-   grit [global options] command [command options] [arguments...]
+   grimoire-tool [global options] command [command options] [arguments...]
 
 VERSION:
    1.0.0
@@ -44,7 +43,7 @@ GLOBAL OPTIONS:
 
 执行：
 ```shell
-grit --m "auto commit " git sync
+grimoire-tool --m "auto commit " git sync
 ```
 
 ```html
@@ -62,12 +61,12 @@ grit --m "auto commit " git sync
 2019/10/05 11:35:03 Execute Command finished.
 ```
 
-### grit space
+### grimoire-tool space
 
 查看目录空间：
 
 ```html
-➜  grit git:(master) grit space                      
+➜  grimoire-tool git:(master) grimoire-tool space                      
 16B     .gitignore
 116B    after
 117B    before
@@ -88,12 +87,12 @@ grit --m "auto commit " git sync
 To install, use `go get`:
 
 ```shell
-go get -u github.com/LeungGeorge/grit
+go get -u github.com/LeungGeorge/grimoire-tool
 ```
 
 ## Contribution
 
-1. Fork ([https://github.com/LeungGeorge/grit/fork](https://github.com/LeungGeorge/grit/fork))
+1. Fork ([https://github.com/LeungGeorge/grimoire-tool/fork](https://github.com/LeungGeorge/grimoire-tool/fork))
 1. Create a feature branch
 1. Commit your changes
 1. Rebase your local changes against the master branch
