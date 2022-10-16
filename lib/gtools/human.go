@@ -8,7 +8,7 @@ const (
 	sizeKBits = 1 << 10
 )
 
-// HumanBytes ...
+// HumanBytes TODO
 // 单位转换：
 // 1024B -> 1K
 // 1024K -> 1M

@@ -6,7 +6,7 @@ import (
 	"github.com/360EntSecGroup-Skylar/excelize"
 )
 
-// Save ...
+// Save TODO
 // 保存Excel
 /*
 	header := []string{}
@@ -38,7 +38,7 @@ func (xlsx GExcel) Save() {
 	rowIndex := startRow
 	// save header
 	for col, value := range xlsx.Header {
-		colName, _ := excelize.ColumnNumberToName(col + startCol)
+		colName := excelize.ToAlphaString(col + startCol)
 		pos := fmt.Sprintf("%s%d", colName, rowIndex)
 		f.SetCellValue(sheetName, pos, value)
 	}
@@ -47,10 +47,8 @@ func (xlsx GExcel) Save() {
 	for _, rowData := range xlsx.Data {
 		rowIndex++
 		for col, value := range rowData {
-			cellName, err := excelize.CoordinatesToCellName(col+startCol, rowIndex)
-			if err != nil {
-				panic(err)
-			}
+			colName := excelize.ToAlphaString(col + startCol)
+			cellName := fmt.Sprintf("%s%d", colName, rowIndex)
 			f.SetCellValue(sheetName, cellName, value)
 		}
 	}

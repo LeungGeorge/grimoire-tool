@@ -1,3 +1,4 @@
+// Package hotreload TODO
 package hotreload
 
 import (
@@ -9,7 +10,7 @@ import (
 	"github.com/fsnotify/fsnotify"
 )
 
-// Watcher ...
+// Watcher TODO
 func Watcher() {
 	watcher, err := fsnotify.NewWatcher()
 	if err != nil {
@@ -59,7 +60,7 @@ func addWatchDir(watcher *fsnotify.Watcher, dir string) error {
 	})
 }
 
-// 增删改都需要reload
+// needReload 增删改都需要reload
 func needReload(op fsnotify.Op) bool {
 	if op&fsnotify.Create == fsnotify.Create {
 		return true

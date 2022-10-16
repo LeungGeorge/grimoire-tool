@@ -1,7 +1,8 @@
+// Package snowflake TODO
 package snowflake
 
-//guid生成器 必须保证该结构体在程序中只初始化一次，否则有可能得到重复id
-//依照snowflake算法得来
+// guid生成器 必须保证该结构体在程序中只初始化一次，否则有可能得到重复id
+// 依照snowflake算法得来
 
 import (
 	"errors"
@@ -12,36 +13,36 @@ import (
 )
 
 const (
-	//Poch ( 2017-05-27 16:52:35.250507739 +0800 CST ).UnixNano() / 1e6
+	// Poch ( 2017-05-27 16:52:35.250507739 +0800 CST ).UnixNano() / 1e6
 	Poch = 1495875155250
-	//WorkerIDBits WorkerId所占的位
+	// WorkerIDBits WorkerId所占的位
 	WorkerIDBits = uint64(10)
-	//SenquenceBits 序列号占的位
+	// SenquenceBits 序列号占的位
 	SenquenceBits = uint64(12)
-	//WorkerIDShift 参照
+	// WorkerIDShift 参照
 	WorkerIDShift = SenquenceBits
-	//TimeStampShift 参照
+	// TimeStampShift 参照
 	TimeStampShift = SenquenceBits + WorkerIDBits
-	//SequenceMask 最大序列号值 4095(4096个)
+	// SequenceMask 最大序列号值 4095(4096个)
 	SequenceMask = int64(-1) ^ (int64(-1) << SenquenceBits)
-	//MaxWorker 最大客户端标志值 1023(1024个)
+	// MaxWorker 最大客户端标志值 1023(1024个)
 	MaxWorker = int64(-1) ^ (int64(-1) << WorkerIDBits)
 )
 
-//GUID GUID定义
+// GUID GUID定义
 type GUID struct {
 	sync.Mutex
-	//Sequence 序列号
+	// Sequence 序列号
 	Sequence int64
-	//lastTimestamp 上一次时间戳
+	// lastTimestamp 上一次时间戳
 	lastTimeStamp int64
-	//lastID 上一次生成的id
+	// lastID 上一次生成的id
 	lastID int64
-	//WorkID
+	// WorkID
 	WorkID int64
 }
 
-//NewGUID 获取一个GUID对象
+// NewGUID 获取一个GUID对象
 func NewGUID(workID int64) (*GUID, error) {
 	var g *GUID
 	if workID > MaxWorker {
@@ -51,12 +52,12 @@ func NewGUID(workID int64) (*GUID, error) {
 	return g, nil
 }
 
-//milliseconds 获得当前毫秒时间
+// milliseconds 获得当前毫秒时间
 func (g *GUID) milliseconds() int64 {
 	return time.Now().UnixNano() / 1e6
 }
 
-//NextID 获取一个GUID
+// NextID 获取一个GUID
 func (g *GUID) NextID() (int64, error) {
 	var ts int64
 	var err error
@@ -81,7 +82,7 @@ func (g *GUID) NextID() (int64, error) {
 	return ts, nil
 }
 
-//timeStamp 获取一个可用时间基数
+// timeStamp 获取一个可用时间基数
 func (g *GUID) timeStamp(lastTimeStamp int64) int64 {
 	ts := g.milliseconds()
 	for {
@@ -94,7 +95,7 @@ func (g *GUID) timeStamp(lastTimeStamp int64) int64 {
 	return ts
 }
 
-//GetIncreaseID 并发环境下生成一个增长的id,按需设置局部变量或者全局变量
+// GetIncreaseID 并发环境下生成一个增长的id,按需设置局部变量或者全局变量
 func (g *GUID) GetIncreaseID(ID *uint64) uint64 {
 	var n, v uint64
 	for {

@@ -1,3 +1,4 @@
+// Package glru TODO
 package glru
 
 import (
@@ -6,7 +7,7 @@ import (
 	"sync"
 )
 
-// GLRU ...
+// GLRU TODO
 // LRU cache
 type GLRU struct {
 	size      int
@@ -20,7 +21,7 @@ type item struct {
 	value interface{}
 }
 
-// NEWGLRU ...
+// NEWGLRU TODO
 func NEWGLRU(size int) (*GLRU, error) {
 	if size <= 0 {
 		return nil, errors.New("must provide a positive size")
@@ -35,7 +36,7 @@ func NEWGLRU(size int) (*GLRU, error) {
 	return lru, nil
 }
 
-// Set ...
+// Set TODO
 func (lru *GLRU) Set(key interface{}, value interface{}) (evicted bool) {
 	lru.lock.Lock()
 	defer lru.lock.Unlock()
@@ -64,7 +65,7 @@ func (lru *GLRU) Set(key interface{}, value interface{}) (evicted bool) {
 	return false
 }
 
-// Get ...
+// Get TODO
 func (lru *GLRU) Get(key interface{}) (value interface{}, ok bool) {
 	lru.lock.Lock()
 	defer lru.lock.Unlock()
@@ -77,7 +78,7 @@ func (lru *GLRU) Get(key interface{}) (value interface{}, ok bool) {
 	return nil, false
 }
 
-// Contains ...
+// Contains TODO
 func (lru *GLRU) Contains(key interface{}) (exist bool) {
 	lru.lock.Lock()
 	defer lru.lock.Unlock()
@@ -86,7 +87,7 @@ func (lru *GLRU) Contains(key interface{}) (exist bool) {
 	return
 }
 
-// Peek ...
+// Peek TODO
 func (lru *GLRU) Peek(key interface{}) (value interface{}, exist bool) {
 	lru.lock.Lock()
 	defer lru.lock.Unlock()
@@ -97,7 +98,7 @@ func (lru *GLRU) Peek(key interface{}) (value interface{}, exist bool) {
 	return nil, false
 }
 
-// Purge ...
+// Purge TODO
 // 清空 cache
 func (lru *GLRU) Purge() {
 	lru.lock.Lock()

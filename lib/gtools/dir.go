@@ -5,7 +5,7 @@ import (
 	"path/filepath"
 )
 
-// DirSize ...
+// DirSize TODO
 func DirSize(path string) (size uint64, err error) {
 	err = filepath.Walk(path, func(_ string, info os.FileInfo, err error) error {
 		if !info.IsDir() {

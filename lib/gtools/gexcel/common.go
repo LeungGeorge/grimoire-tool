@@ -2,11 +2,11 @@ package gexcel
 
 const (
 	startRow         = 1
-	startCol         = 1
+	startCol         = 0
 	defaultSheetName = "Sheet1"
 )
 
-// GExcel ...
+// GExcel TODO
 // 自定义Excel
 type GExcel struct {
 	FileName  string
@@ -15,7 +15,7 @@ type GExcel struct {
 	Data      [][]string
 }
 
-// 获取 Excel sheet，默认值为：defaultSheetName
+// getSheetName 获取 Excel sheet，默认值为：defaultSheetName
 func (xlsx GExcel) getSheetName() string {
 	if xlsx.SheetName == "" {
 		panic("sheet name is empty.")

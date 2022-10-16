@@ -1,6 +1,9 @@
 package snowflake
 
-import "testing"
+import (
+	"fmt"
+	"testing"
+)
 
 func TestNewGUID(t *testing.T) {
 	t.Log("start test NewGUID:")
@@ -20,7 +23,6 @@ func TestNewGUID(t *testing.T) {
 }
 
 func BenchmarkNewGUIDV2(b *testing.B) {
-
 	g, err := NewGUID(1)
 	if err != nil {
 		b.Fatal(err)
@@ -35,7 +37,6 @@ func BenchmarkNewGUIDV2(b *testing.B) {
 }
 
 func BenchmarkNewGUID(b *testing.B) {
-
 	g, err := NewGUID(1)
 	if err != nil {
 		b.Fatal(err)
@@ -47,4 +48,15 @@ func BenchmarkNewGUID(b *testing.B) {
 			g.NextID()
 		}
 	})
+}
+
+func TestGUID_NextID(t *testing.T) {
+	g, err := NewGUID(1)
+	if err != nil {
+		panic(err)
+	}
+
+	for i := 0; i < 1000; i++ {
+		fmt.Println(g.NextID())
+	}
 }

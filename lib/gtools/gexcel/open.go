@@ -4,7 +4,7 @@ import (
 	"github.com/360EntSecGroup-Skylar/excelize"
 )
 
-// OpenAsColumn2Slice ...
+// OpenAsColumn2Slice TODO
 // 打开Excel
 func (xlsx GExcel) OpenAsColumn2Slice() [][]string {
 	f, err := excelize.OpenFile(xlsx.FileName)
@@ -12,15 +12,10 @@ func (xlsx GExcel) OpenAsColumn2Slice() [][]string {
 		panic(err)
 	}
 
-	rows, err := f.GetRows(xlsx.SheetName)
-	if err != nil {
-		panic(err)
-	}
-
-	return rows
+	return f.GetRows(xlsx.SheetName)
 }
 
-// OpenAsColumn2Map ...
+// OpenAsColumn2Map TODO
 // 打开Excel，需要先执行Save的demo保存一波
 /*
 	rr := gexcel.GExcel{
@@ -37,19 +32,13 @@ func (xlsx GExcel) OpenAsColumn2Map() []map[string]string {
 		panic(err)
 	}
 
-	rows, err := f.GetRows(xlsx.SheetName)
-	if err != nil {
-		panic(err)
-	}
+	rows := f.GetRows(xlsx.SheetName)
 
 	result := make([]map[string]string, len(rows))
 	for indexRow, row := range rows {
 		result[indexRow] = make(map[string]string)
 		for col := 0; col < len(row); col++ {
-			colName, err := excelize.ColumnNumberToName(col + startCol)
-			if err != nil {
-				panic(err)
-			}
+			colName := excelize.ToAlphaString(col + startCol)
 			result[indexRow][colName] = row[col]
 		}
 	}

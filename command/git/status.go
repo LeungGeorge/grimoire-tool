@@ -16,7 +16,7 @@ func status() int {
 	hasFile := false
 	for i, s := range sLine {
 		if i == 0 {
-			ahead = strings.Index(strings.ToLower(s), "ahead") >= 0
+			ahead = strings.Contains(strings.ToLower(s), "ahead")
 		} else if len(s) > 0 {
 			hasFile = true
 		}
