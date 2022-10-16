@@ -8,7 +8,7 @@ import (
 )
 
 func commit() error {
-	msg := "auto commit"
+	msg := "added by robot"
 	if flag.Message != "" {
 		msg = flag.Message
 	}

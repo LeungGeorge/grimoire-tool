@@ -23,7 +23,7 @@ func main() {
 	// 配置 APP 的一些属性、动作，包括 name，usage 等等。
 	app.Name = "grimoire-tool"
 	app.Usage = "grimoire-tool is a tool of grimoire, batch execute commands."
-	app.Version = "1.0.x"
+	app.Version = "1.0.1"
 
 	// 2.1
 	// 配置 flags，一些公用变量标识，供后续逻辑（比如 action 中）使用
