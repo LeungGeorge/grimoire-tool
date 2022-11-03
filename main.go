@@ -9,6 +9,7 @@ import (
 	"github.com/LeungGeorge/grimoire-tool/before"
 	"github.com/LeungGeorge/grimoire-tool/command/git"
 	"github.com/LeungGeorge/grimoire-tool/command/hexo"
+	"github.com/LeungGeorge/grimoire-tool/command/markdown"
 	"github.com/LeungGeorge/grimoire-tool/command/space"
 	"github.com/LeungGeorge/grimoire-tool/flag"
 	"github.com/urfave/cli"
@@ -23,7 +24,7 @@ func main() {
 	// 配置 APP 的一些属性、动作，包括 name，usage 等等。
 	app.Name = "grimoire-tool"
 	app.Usage = "grimoire-tool is a tool of grimoire, batch execute commands."
-	app.Version = "1.0.1"
+	app.Version = "1.1.0"
 
 	// 2.1
 	// 配置 flags，一些公用变量标识，供后续逻辑（比如 action 中）使用
@@ -52,6 +53,7 @@ func main() {
 		git.Git,
 		hexo.Hexo,
 		space.Space,
+		markdown.Toc,
 	}
 	sort.Sort(cli.CommandsByName(app.Commands))
 
