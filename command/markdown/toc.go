@@ -115,6 +115,9 @@ func DFS(dirname string, titleLevel int64) {
 		if !fileInfo.IsDir() {
 			continue
 		}
+		if strings.HasSuffix(fileInfo.Name(), ".assets") {
+			continue
+		}
 		markdownText := level + " " + fileInfo.Name() + "\n\n"
 		// fmt.Println(markdownText)
 		summary += markdownText
