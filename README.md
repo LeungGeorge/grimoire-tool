@@ -1,6 +1,6 @@
 # grimoire-tool
 
-为简洁而生，基于 [urfave/cli](https://github.com/urfave/cli) 实现。
+常用命令封装，基于 [urfave/cli](https://github.com/urfave/cli) 实现。
 
 ## Description
 
