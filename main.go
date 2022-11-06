@@ -1,6 +1,7 @@
 package main
 
 import (
+	"encoding/json"
 	"log"
 	"os"
 	"sort"
@@ -15,6 +16,29 @@ import (
 	"github.com/urfave/cli"
 )
 
+const (
+	defaultVersion = "1.0.0"
+)
+
+// NpmPackageConfig TODO
+type NpmPackageConfig struct {
+	Version string `json:"version"`
+}
+
+func getNpmPackageVersion() string {
+	content, err := os.ReadFile("package.json")
+	if err != nil {
+		log.Fatalf("open file failed, err[%v]", err)
+		return defaultVersion
+	}
+
+	cnf := NpmPackageConfig{}
+	if err := json.Unmarshal(content, &cnf); err != nil {
+		return defaultVersion
+	}
+	return cnf.Version
+}
+
 func main() {
 	// 1. 创建 APP
 	// 通过 cli.NewApp() 创建一个实例
@@ -24,7 +48,7 @@ func main() {
 	// 配置 APP 的一些属性、动作，包括 name，usage 等等。
 	app.Name = "grimoire-tool"
 	app.Usage = "grimoire-tool is a tool of grimoire, batch execute commands."
-	app.Version = "1.1.0"
+	app.Version = getNpmPackageVersion()
 
 	// 2.1
 	// 配置 flags，一些公用变量标识，供后续逻辑（比如 action 中）使用
