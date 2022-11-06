@@ -12,7 +12,7 @@
 
 ## Usage
 
-```html
+```bash
 NAME:
    grimoire-tool - grimoire-tool is a tool of grimoire, batch execute commands.
 
@@ -20,11 +20,10 @@ USAGE:
    grimoire-tool [global options] command [command options] [arguments...]
 
 VERSION:
-   1.0.0
+   1.1.0
 
 COMMANDS:
    space    space of current directory.
-   update   upgrade to newest version of master.
    help, h  Shows a list of commands or help for one command
 
    git:
@@ -33,13 +32,16 @@ COMMANDS:
    hexo:
      hexo  hexo blog commands: preview, publish.
 
+   markdown:
+     markdown  markdown commands: toc.
+
 GLOBAL OPTIONS:
    --message value, -m value  the commit message of git (default: "auto commit")
    --help, -h                 show help
    --version, -v              print the version
 ```
 
-### git 仓库同步
+### git sync
 
 执行：
 ```shell
@@ -61,7 +63,7 @@ grimoire-tool --m "auto commit " git sync
 2019/10/05 11:35:03 Execute Command finished.
 ```
 
-### grimoire-tool space
+### space
 
 查看目录空间：
 
