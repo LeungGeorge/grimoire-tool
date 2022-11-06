@@ -11,5 +11,6 @@ sync:
 	go build -o bin/
 	grimoire-tool git sync
 	npm version patch
-	grimoire-tool git sync
+
+publish:
 	npm publish
