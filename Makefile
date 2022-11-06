@@ -9,13 +9,9 @@ fmt:
 
 sync:
 	go build -o bin/
-	git add .
-	go commit -m "audo commit by robot"
-	git pull
+	grimoire-tool git sync
 	npm version patch
-	git add .
-	go commit -m "audo commit by robot"
-	git push
+	grimoire-tool git sync
 
 
 publish:
