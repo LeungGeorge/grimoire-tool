@@ -1,7 +1,6 @@
 package main
 
 import (
-	"encoding/json"
 	"log"
 	"os"
 	"sort"
@@ -26,17 +25,7 @@ type NpmPackageConfig struct {
 }
 
 func getNpmPackageVersion() string {
-	content, err := os.ReadFile("package.json")
-	if err != nil {
-		log.Fatalf("open file failed, err[%v]", err)
-		return defaultVersion
-	}
-
-	cnf := NpmPackageConfig{}
-	if err := json.Unmarshal(content, &cnf); err != nil {
-		return defaultVersion
-	}
-	return cnf.Version
+	return defaultVersion
 }
 
 func main() {
