@@ -15,8 +15,4 @@ sync:
 
 
 publish:
-	go mod tidy
-	go mod download
-	go fmt ./...
-	go build -o bin/
-	npm version patch
+	npm publish
